@@ -3,6 +3,9 @@ upstream <%= application %> {
 }
 
 server {
+  <% if app_port %>
+  listen <%= app_port %>;
+  <% end %>
   client_max_body_size 4G;
   server_name <%= server_name %>;
   keepalive_timeout 5;
